@@ -8,7 +8,6 @@ from .txm_core import PresetManager, LogManager, SyncManager
 @click.group()
 def txm():
     config = load_config()
-    # Further initializations can go here
 
 @txm.command()
 @click.argument("session_name")
