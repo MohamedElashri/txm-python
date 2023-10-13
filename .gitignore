@@ -17,3 +17,19 @@ build/
 *.egg-info
 *.manifest
 *.spec
+
+
+## Ignore coverage files
+.coverage
+.tox
+nosetests.xml
+coverage.xml
+
+
+## Ignore pytest cache
+.cache
+pytest_cache/
+
+
+## Ignore tests until we have correct coverage
+tests/
