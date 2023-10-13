@@ -32,8 +32,11 @@ To install `txm`, navigate to the root directory of the project and execute the 
 pip install .
 ```
 
-This will install the package in editable mode, making it accessible from the command line.
+This will build the package and install it. Also the package is temporarily available on pypitest (to move it later to pypi)
 
+```
+pip install -i https://test.pypi.org/simple/ txm
+```
 ## Usage
 
 Here are the available functionalities of `txm`.
