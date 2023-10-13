@@ -1,0 +1,19 @@
+## Ignore python bytecode
+__pycache__/
+
+## Ignore python package egg metadata
+*.egg-info/
+
+## Ignore distribution files
+dist/
+build/
+
+## Ignore generated files
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info
+*.manifest
+*.spec

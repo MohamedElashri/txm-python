@@ -1,5 +1,4 @@
-from tmux_wrapper import run_tmux_command
-
+from ..tmux_wrapper import run_tmux_command
 def create_session(session_name):
     return run_tmux_command(f"tmux new-session -d -s {session_name}")
 

@@ -1,4 +1,4 @@
-from tmux_wrapper import run_tmux_command
+from ..tmux_wrapper import run_tmux_command
 
 def split_pane_vertically():
     return run_tmux_command("tmux split-window")
