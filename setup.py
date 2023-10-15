@@ -4,7 +4,6 @@ setup(
     name='txm',
     version='0.1',
     packages=find_packages(),
-    use_scm_version=True,
     author='Mohamed Elashri',
     author_email='txm@elashri.com',
     description='A CLI utility for tmux',

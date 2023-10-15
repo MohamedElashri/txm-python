@@ -3,26 +3,14 @@
 # Function to display help information
 display_help() {
     echo "Usage: $0 [options]"
-    echo "  -v, --version    Set the package version"
-    echo "  -n, --no-publish Skip publishing to PyPI"
-    echo "  -e, --env        Location of .env file"
-    echo "  -h, --help       Display this help and exit"
+    echo "  -v, --version      Set the package version"
+    echo "  -p, --publish      Publish to PyPI ('y' or 'n')"
+    echo "  -e, --env          Location of .env file"
+    echo "  -h, --help         Display this help and exit"
 }
 
-# Load from .env file if specified
-if [[ "$1" == "-e" || "$1" == "--env" ]]; then
-    source "$2"
-    shift # past argument
-    shift # past value
-fi
-
-# Retrieve the current package name and version from pyproject.toml
-CURRENT_PACKAGE_NAME=$(awk -F\" '/name = /{print $(NF-1)}' pyproject.toml)
-CURRENT_VERSION=$(awk -F\" '/version = /{print $(NF-1)}' pyproject.toml)
-
-# Display the current package name and version
-echo "Current package name: $CURRENT_PACKAGE_NAME"
-echo "Current package version: $CURRENT_VERSION"
+# Initialize the PUBLISH variable as empty
+PUBLISH=""
 
 # Parse command-line options
 while [[ $# -gt 0 ]]
@@ -35,9 +23,19 @@ do
         shift # past argument
         shift # past value
         ;;
-        -n|--no-publish)
-        NO_PUBLISH=YES
+        -p|--publish)
+        PUBLISH="$2"
         shift # past argument
+        shift # past value
+        ;;
+        -e|--env)
+        source "$2"
+        # Update internal variables from environment variables
+        VERSION="${VERSION:-$VERSION}"
+        PUBLISH="${PUBLISH:-$PUBLISH}"
+        TOKEN="${TOKEN:-$TOKEN}"
+        shift # past argument
+        shift # past value
         ;;
         -h|--help)
         display_help
@@ -48,6 +46,7 @@ do
         ;;
     esac
 done
+
 
 # Prompt for a new version number if not provided as an argument
 if [[ -z $VERSION ]]; then
@@ -92,12 +91,10 @@ else
     echo "Build successful."
 fi
 
-# Ask user if they want to publish
-if [[ -z $NO_PUBLISH ]]; then
+# Ask user if they want to publish, but only if the --publish flag or .env file didn't set it
+if [[ -z $PUBLISH ]]; then
     echo "Do you want to publish the package? (y/n)"
     read PUBLISH
-else
-    PUBLISH="n"
 fi
 
 # Publish package
