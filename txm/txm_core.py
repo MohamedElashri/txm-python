@@ -73,6 +73,9 @@ class PresetManager:
 
     @staticmethod
     def handle_load(preset_name):
+        # Check if the .txm-presets.json file exists
+        if not os.path.exists(".txm-presets.json"):
+            return "No presets file saved to remove"        
         # Load tmux session from saved preset
         with open(".txm-presets.json", "r") as f:
             presets = json.load(f)
@@ -83,6 +86,9 @@ class PresetManager:
 
     @staticmethod
     def handle_remove(preset_name):
+        # Check if the .txm-presets.json file exists
+        if not os.path.exists(".txm-presets.json"):
+            return "No presets file saved to remove"
         # Remove saved preset
         with open(".txm-presets.json", "r+") as f:
             presets = json.load(f)
@@ -91,6 +97,9 @@ class PresetManager:
 
     @staticmethod
     def handle_list():
+        # Check if the .txm-presets.json file exists
+        if not os.path.exists(".txm-presets.json"):
+            return "No presets saved."
         # List all saved presets
         with open(".txm-presets.json", "r") as f:
             presets = json.load(f)
