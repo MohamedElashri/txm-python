@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ../
+
 ## Clear the python package built files
 
 # First check if the package folders [dist build txm.egg-info] exists

@@ -37,7 +37,6 @@ tests/
 
 ## Ignore logs
 **/*.log
-**/*.txt
 
 
 ## Ignore .env 

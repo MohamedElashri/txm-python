@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+cd ../
+
 # Function to display help information
 display_help() {
     echo "Usage: $0 [options]"
