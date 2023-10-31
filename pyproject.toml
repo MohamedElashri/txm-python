@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools", "wheel", "setuptools_scm"]
+
+[project]
+name = "txm"
+version = "0.1.0"
+description = "A CLI utility for tmux"
+authors = [
+    { name = "Mohamed Elashri", email = "txm@elashri.com" },
+]
+readme="README.md"
+license = {text = "GPL-3.0"}
+dependencies = ["Click"]
+keywords=["tmux", "cli", "utility", "terminal", 
+          "multiplexer","terminal multiplexer",
+          "terminal multiplexing"]
+classifiers=[
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9'
+]
+
+[options.entry_points]
+console_scripts=[
+   'txm=txm.cli:txm'
+]
+
+[project.urls]
+"Homepage" = "https://github.com/MohamedElashri/txm"
+"Bug Tracker" = "https://github.com/MohamedElashri/txm/issues"

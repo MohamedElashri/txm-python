@@ -26,17 +26,27 @@
   - [License](#license)
 ## Installation
 
-To install `txm`, navigate to the root directory of the project and execute the following command:
+You can install the package from PyPI using `pip`:
 
 ```bash
+pip install txm
+```
+
+
+
+To build `txm` from the source first clone the repository
+
+```bash
+git clone https://github.com/MohamedElashri/txm
+```
+
+Now navigate to the root directory of the project and execute the following command:
+
+```bash
+cd txm
 pip install .
 ```
 
-This will build the package and install it. Also the package is temporarily available on pypitest (to move it later to pypi)
-
-```
-pip install -i https://test.pypi.org/simple/ txm
-```
 ## Usage
 
 Here are the available functionalities of `txm`.

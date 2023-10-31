@@ -33,3 +33,11 @@ pytest_cache/
 
 ## Ignore tests until we have correct coverage
 tests/
+
+
+## Ignore logs
+**/*.log
+
+
+## Ignore .env 
+.env
