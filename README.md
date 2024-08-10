@@ -1,3 +1,6 @@
+
+# All Development and update is now done in [txm](https://github.com/MohamedElashri/txm) new repository and now using Go as a development language. This is now archived
+
 # txm - A Tmux Helper Tool
 
 `txm` is a command-line utility to make working with [tmux](https://github.com/tmux/tmux/wiki) more efficient and user-friendly. It's written in Python and aims to abstract some of the complexities involved in managing tmux sessions, panes, and command executions.
